@@ -7,7 +7,7 @@ before_install:
     - docker build -t mritunjayonemail/docker-react -f Dockerfile.dev .
     
 script:
-    - docker run mritunjayonemail/docker-react npm run test -- --coverage
+    - docker run -e CI=true mritunjayonemail/docker-react npm run test
     
 deploy:
     provider: elasticbeanstalk
